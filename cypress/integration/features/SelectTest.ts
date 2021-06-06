@@ -45,14 +45,4 @@ describe("Cypress dropdown", () => {
        
         cy.wait(2000)
     })
-
- /*it("cy dropdown select element single selction", ()=> {
-        cy.visit('https://qavbox.github.io/demo/signup')
-        /*cy.get('[name=\'sgender\'] option').eq(2).then(($valu) => {
-            cy.wrap($valu).parent('select').select($valu.val())
-        })*/
-        /*cy.get('[name=\'sgender\'] option').eq(2).as('value')
-        cy.get('[name=\'sgender\']').select(cy.get('@value').invoke('val'))
-        cy.wait(2000)
-    })*/
 })
