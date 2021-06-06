@@ -1,0 +1,19 @@
+
+Task1
+
+Task2
+
+Task3
+
+3 2 1 
+
+
+Async - independent 
+
+sync - run sequence - promises, callback functions, async await
+
+
+
+cypress sync
+
+non cypress async

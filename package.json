@@ -1,0 +1,19 @@
+{
+  "name": "Cypress",
+  "version": "1.0.0",
+  "description": "Cypress e2e tests",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "keywords": [],
+  "author": "qavbox",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^7.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}
