@@ -9,13 +9,13 @@ describe("Reg form", () => {
         expect(cy.get('#mygroup li')).to.have.lengthOf(4);*/
     })
 
-    xit("cy get options", ()=> {
+    it("cy get options", ()=> {
         //cy.visit("https://qavbox.github.io/demo/signup/");
         cy.visit("https://qavbox.github.io/demo/delay/");
         //cy.get('input.EnterText').type("QAVBOX");
         //cy.get('input.EnterText', {log:false, timeout: 1000}).type("QAVBOX");
         //cy.get('input[name=\'home\']').click();
-        cy.get('input[name=\'commit1\']').click();
+        cy.get('input[name=\'commit1\']', {log: false}).click();
         cy.get('#delay', {timeout: 6000}).should('have.text','I appeared after 5 sec');
     })
 
@@ -74,7 +74,7 @@ describe("Reg form", () => {
 
     })
     
-    it("cy async", ()=> {
+    xit("cy async", ()=> {
         cy.visit("https://qavbox.github.io/demo/signup");
         console.log('navigated to url')
         cy.get('#username', {timeout: 5000}).type('qavbox').then(()=>{
