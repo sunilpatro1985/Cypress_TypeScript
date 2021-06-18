@@ -25,7 +25,7 @@ describe('sort', () => {
       cy.get('.title')
     });    
 
-    it('sort standard_user', () => {
+    xit('sort standard_user', () => {
   
       cy.visit('https://qavbox.github.io/demo/iframes/');
       cy.getLinks().should('have.length', '5')
@@ -41,9 +41,13 @@ describe('sort', () => {
       cy.getIframe('iframe[id=\'Frame2\']').getLinks().should('have.length', '1')
  
     });
-      //cy.get('.title')
-
+    
+    it('sort standard_user', () => {
   
+      cy.visit('https://www.saucedemo.com/');
+      cy.get('input#user-name').type('standard_user');
+      cy.get('input#user-name').type('standard_user');
+   });
   
   });
   

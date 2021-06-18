@@ -4,5 +4,6 @@ declare namespace Cypress {
       getText(): any //as the method doesn't return, so void
       getLinks(): Chainable<Element>
       getIframe(iFrame: string): Chainable<Element>
+      type(text: string, options?: Partial<Cypress.TypeOptions>): Cypress.Chainable<JQuery<HTMLElement>>
     }
   }

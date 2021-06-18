@@ -61,3 +61,16 @@ Cypress.Commands.add('getText', { prevSubject: 'el' }, (el)  => {
         .should('be.visible')
         .then(cy.wrap);
 })
+
+Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
+    const clearedText = `{selectall}{backspace}${text}`;
+
+  options = { ...options, log: false };
+
+  Cypress.log({
+    $el: element,
+    name: "type",
+    message: text,
+  });
+    return originalFn(element, clearedText, options);
+  })
