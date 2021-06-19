@@ -2,6 +2,10 @@
 
 Cypress end to end testing using TypeScript
 
+## Step by step tutorial
+Refer [youtube.com/qavbox](https://www.youtube.com/playlist?list=PLPO0LFyCaSo1sEDJb6FR2a1iPl-48FDBL) or [qavalidation.com](https://qavalidation.com/category/cypress/)
+
+
 ## How to use this repo
 
 * Clone this repo  
@@ -26,7 +30,3 @@ describe("Reg form test", () => {
     })
 })
 ```
-
-## Step by step tutorial
-Refer [youtube.com/qavbox](https://www.youtube.com/playlist?list=PLPO0LFyCaSo1sEDJb6FR2a1iPl-48FDBL) for more details  
-Also refer [qavalidation.com](https://qavalidation.com/category/cypress/) for blog tutorial
