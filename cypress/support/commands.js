@@ -23,3 +23,41 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+//parent command, cy.login()
+Cypress.Commands.add('login', (email, password) => { 
+  cy.get('input#user-name').type(email);
+  cy.get('input#password').type(password);
+  cy.get('input[type="submit"]').click();
+})
+
+//dual commnad, cy.get('').getLinks() or cy.getLinks()
+Cypress.Commands.add('getLinks', { prevSubject: 'optional'}, (subject) => { 
+  if(subject){
+    cy.wrap(subject).then(($el) =>{ //cy.get("someEle").getLinks()
+      cy.wrap($el).find('a')
+    })
+  } else{
+    cy.get('a') //cy.getLinks()
+  }
+})
+
+//child, cy.get('').gettext()
+Cypress.Commands.add('getText', { prevSubject: 'element'}, (element, options) => { 
+    cy.wrap(element).invoke('text').then((text) =>{
+        if(text === ''){
+          cy.wrap(element).invoke('val')
+        }else{
+          cy.wrap(element).invoke('text')
+        }
+    })
+})
+
+
+Cypress.Commands.overwrite('type', (originalFn, element, text, options) => { 
+  const clearedText = `{selectAll}{backspace}${text}`;
+  options = {...options, log: false};
+  return originalFn(element, clearedText, options)
+ })
+
