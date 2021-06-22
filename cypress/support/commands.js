@@ -32,6 +32,13 @@ Cypress.Commands.add('login', (email, password) => {
   cy.get('input[type="submit"]').click();
 })
 
+Cypress.Commands.add('getIframe', (iFrameLocator) => { 
+  cy.get(iFrameLocator).its('0.contentDocument.body')
+    .should('be.visible')
+    .then(cy.wrap)
+})
+
+
 //dual commnad, cy.get('').getLinks() or cy.getLinks()
 Cypress.Commands.add('getLinks', { prevSubject: 'optional'}, (subject) => { 
   if(subject){
